@@ -567,7 +567,7 @@ const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 let mapN,layN,lineN,agMarker,ppiMarker,valloMarker,dotsN,curState="";
 function initMapN(){
   mapN=L.map('mapN',{zoomControl:false,attributionControl:false,scrollWheelZoom:false,dragging:false,doubleClickZoom:false,tap:false,keyboard:false});
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:18}).addTo(mapN);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png ?key=cb1_44z0_1_4af120e3c086cf459faa4020',{maxZoom:18}).addTo(mapN);
   L.control.attribution({prefix:false}).addAttribution('© OpenStreetMap, CARTO').addTo(mapN);
   layN=L.layerGroup().addTo(mapN);
   mapN.setView([AGRO.lat,AGRO.lng],12);
