@@ -567,7 +567,7 @@ const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 let mapN,layN,lineN,agMarker,ppiMarker,valloMarker,dotsN,curState="";
 function initMapN(){
   mapN=L.map('mapN',{zoomControl:false,attributionControl:false,scrollWheelZoom:false,dragging:false,doubleClickZoom:false,tap:false,keyboard:false});
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png ?key=cb1_44z0_1_4af120e3c086cf459faa4020',{maxZoom:18}).addTo(mapN);
+  L.tileLayer('https://basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}{r}.png ?key=cb1_44z0_1_4af120e3c086cf459faa4020',{maxZoom:18}).addTo(mapN);
   L.control.attribution({prefix:false}).addAttribution('© OpenStreetMap, CARTO').addTo(mapN);
   layN=L.layerGroup().addTo(mapN);
   mapN.setView([AGRO.lat,AGRO.lng],12);
@@ -653,7 +653,7 @@ const GEO_URLS=[
 function initMapE(){
   if(eInit)return; eInit=true;
   mapE=L.map('mapE').setView([40.30,15.10],9);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png ?key=cb1_44z0_1_4af120e3c086cf459faa4020',{attribution:'© OpenStreetMap, CARTO',maxZoom:18}).addTo(mapE);
+  L.tileLayer('https://basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}{r}.png ?key=cb1_44z0_1_4af120e3c086cf459faa4020',{attribution:'© OpenStreetMap, CARTO',maxZoom:18}).addTo(mapE);
   facLayer=L.layerGroup().addTo(mapE);
   FACILITIES.forEach(f=>{const isPS=f.emergencyActive&&(f.emergencyLevel.startsWith("DEA")||f.emergencyLevel==="PS");
     L.circleMarker([f.lat,f.lng],{radius:7,color:'#fff',weight:2,fillColor:isPS?css('--c-buono'):css('--c-fragile'),fillOpacity:1})
